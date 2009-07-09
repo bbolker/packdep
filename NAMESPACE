@@ -1,0 +1,11 @@
+export(
+  "map.depends",
+  "dependencies",
+  "centrality",
+  "related.packages"
+)
+
+S3method(plot, packdep.dependencies)
+S3method(plot, packdep.centrality)
+S3method(hist, packdep.dependencies)
+S3method(hist, packdep.centrality)
