@@ -38,7 +38,7 @@
 \author{ Radhakrishnan Nagarajan and Marco Scutari }
 \examples{
 \dontrun{
-d = get.depends()
+d = map.depends()
 c = dependencies(d)
 
 hist(c, freq = TRUE)

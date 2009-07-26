@@ -10,7 +10,7 @@
   dependencies(x, order.by = c("none", "dependencies", "reverse"))
 }
 \arguments{
-  \item{x}{an object of class \code{igraph} returned by \code{get.depends}.}
+  \item{x}{an object of class \code{igraph} returned by \code{map.depends}.}
   \item{order.by}{a character string. Possible values are \code{none}
     (rows in the returned data frame are not sorted), \code{dependencies}
     (rows are sorted in order of decreasing number of dependencies) or \code{reverse}
@@ -45,7 +45,7 @@
 \seealso{\code{\link{map.depends}} and \code{\link{plot dependencies}}.}
 \examples{
 \dontrun{
-d = get.depends()
+d = map.depends()
 dependencies(d)
 
 # write a table containing the packages on CRAN,

@@ -18,8 +18,8 @@
 
     Package: \tab packdep\cr
     Type: \tab Package\cr
-    Version: \tab 0.1\cr
-    Date: \tab 2009-07-09\cr
+    Version: \tab 0.2\cr
+    Date: \tab 2009-07-26\cr
     License: \tab GPLv2 or later
 
   }
@@ -63,12 +63,12 @@ library(packdep)
 
 \dontrun{
 # map dependencies among CRAN packages.
-d1 = get.depends()
+d1 = map.depends()
 # use a specific CRAN mirror.
-d2 = get.depends(contriburl = contrib.url("http://cran.r-project.org"))
+d2 = map.depends(contriburl = contrib.url("http://cran.r-project.org"))
 d2
 # map dependencies among BioConductor packages.
-d3 = get.depends(repository = "bioc")
+d3 = map.depends(repository = "bioc")
 d3
 }
 }

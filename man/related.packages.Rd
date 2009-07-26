@@ -11,7 +11,7 @@
   related.packages(x, order = 1, node)
 }
 \arguments{
-  \item{x}{an object of class \code{igraph} returned by \code{get.depends}.}
+  \item{x}{an object of class \code{igraph} returned by \code{map.depends}.}
   \item{order}{a positive integer, giving the order of the neighbourhood 
     (i.e. the maximum distance from the package specified by the \code{node}
     parameter).}
@@ -24,7 +24,7 @@
 }
 \examples{
 \dontrun{
-d = get.depends()
+d = map.depends()
 related.packages(d, 1, "boot")
 }
 }

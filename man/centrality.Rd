@@ -10,7 +10,7 @@
   centrality(x, order.by = c("none", "betweenness", "closeness"))
 }
 \arguments{
-  \item{x}{an object of class \code{igraph} returned by \code{get.depends}.}
+  \item{x}{an object of class \code{igraph} returned by \code{map.depends}.}
   \item{order.by}{a character string. Possible values are \code{none}
     (rows in the returned data frame are not sorted), \code{betweenness}
     (rows are sorted in order of decreasing betweenness) or \code{closeness}
@@ -38,7 +38,7 @@
 }
 \examples{
 \dontrun{
-d = get.depends()
+d = map.depends()
 centrality(d)
 
 # write a table containing the packages on CRAN,
