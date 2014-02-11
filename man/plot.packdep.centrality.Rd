@@ -10,11 +10,13 @@
 
 }
 \usage{
-  \method{plot}{packdep.centrality}(x, type = c("betweenness", "closeness"), 
-    logscale = c("", "x", "y", "xy"), breaks = 10, freq = FALSE,
-    xlab = NULL, ylab = NULL, ...)
-  \method{hist}{packdep.centrality}(x, type = c("betweenness", "closeness"), 
-    xlab = NULL, ylab = "frequency", main = "", ...)
+\method{plot}{packdep.centrality}(x, type = c("betweenness", "incloseness",
+    "outcloseness", "indegree", "outdegree", "degree"), 
+     logscale = c("", "x", "y", "xy"), breaks = 10, freq = FALSE, 
+     xlab = NULL, ylab = NULL, ...)
+\method{hist}{packdep.centrality}(x, type = c("betweenness", "incloseness",
+     "outcloseness", "indegree", "outdegree", "degree"),
+     xlab = NULL, ylab = "frequency", main = "", ...)
 }
 \arguments{
   \item{x}{an object of class \code{packdep.centrality}.}

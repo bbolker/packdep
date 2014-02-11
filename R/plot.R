@@ -1,7 +1,8 @@
 
 # histogram method for centrality.
-hist.packdep.centrality = function(x, type = c("betweenness", "closeness"), 
-    xlab = NULL, ylab = "frequency", main = "", ...) {
+hist.packdep.centrality = function(x, type = c("betweenness", "incloseness", 
+    "outcloseness", "indegree", "outdegree", "degree"), xlab = NULL, 
+     ylab = "frequency", main = "", ...) {
 
   type = match.arg(type)
 
@@ -22,9 +23,9 @@ hist.packdep.dependencies = function(x, type = c("dependencies", "reverse"),
 }#HIST.PACKDEP.DEPENDENCIES
 
 # plot method for centrality.
-plot.packdep.centrality = function(x, type = c("betweenness", "closeness"), 
-    logscale = c("", "x", "y", "xy"), breaks = 10, freq = FALSE, 
-    xlab = NULL, ylab = NULL, ...) {
+plot.packdep.centrality = function(x, type = c("betweenness", "incloseness",
+    "outcloseness", "indegree", "outdegree", "degree"), logscale = c("", "x", "y", "xy"), 
+    breaks = 10, freq = FALSE, xlab = NULL, ylab = NULL, ...) {
 
   type = match.arg(type)
   logscale = match.arg(logscale)

@@ -2,8 +2,12 @@ export(
   "map.depends",
   "dependencies",
   "centrality",
-  "related.packages"
+  "related.packages",
+  "funcmap"
 )
+
+importFrom(igraph, closeness, betweenness, degree)
+importFrom(tools, package.dependencies)
 
 S3method(plot, packdep.dependencies)
 S3method(plot, packdep.centrality)

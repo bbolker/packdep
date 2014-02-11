@@ -1,9 +1,17 @@
 
 # store packages' dependencies in an adjacency matrix.
-map.depends = function(repository = c("cran", "bioc"), contriburl = contrib.url(getOption("repos"))) {
+map.depends = function(repository = c("cran", "bioc"), contriburl = contrib.url(getOption("repos")), 
+    dependencies = c("Imports", "Depends", "Suggests")) {
 
   # choose one: CRAN or BioConductor.
+  if (!is.character(repository) || any(!(repository %in% c("cran", "bioc"))))
+    stop("repository must be either 'cran' (for CRAN) or 'bioc' (for BioConductor).")
   repository = match.arg(repository)
+  if (length(repository) != 1)
+    stop("only one repository can be specified.")
+  # choose one or more form of dependency.
+  if (!is.character(dependencies) || any(!(dependencies %in% c("Imports", "Depends", "Suggests"))))
+    stop("dependencies must be either 'Imports', 'Depends' or 'Suggests'.")
 
   if (repository == "cran") {
 
@@ -21,10 +29,17 @@ map.depends = function(repository = c("cran", "bioc"), contriburl = contrib.url(
 
   }#THEN
 
+  # check whether the connection to the mirror was successful.
+  if (nrow(a) == 0)
+    stop(paste("unable to fetch dependency data from", contriburl, "."))
+
   # extract Depends, Import and Suggests for each package.
-  imp = tools:::package.dependencies(a, depLevel = "Imports")
-  sug = tools:::package.dependencies(a, depLevel = "Suggests")
-  dep = tools:::package.dependencies(a, depLevel = "Depends")
+  if ("Imports" %in% dependencies)
+    imp = package.dependencies(a, depLevel = "Imports")
+  if ("Suggests" %in% dependencies)
+    sug = package.dependencies(a, depLevel = "Suggests")
+  if ("Depends" %in% dependencies)
+    dep = package.dependencies(a, depLevel = "Depends")
 
   # store the names of the packages.
   name_pack = rownames(a)
@@ -48,19 +63,31 @@ map.depends = function(repository = c("cran", "bioc"), contriburl = contrib.url(
   # fill in the information about each package.
   for (i in name_pack) {
 
-    if (is.matrix(dep[[i]])) {
-      valid = name_pack %in% dep[[i]][, 1, drop = TRUE]
-      m[ valid , i] <- 1L
+    if ("Depends" %in% dependencies) {
+
+      if (is.matrix(dep[[i]])) {
+        valid = name_pack %in% dep[[i]][, 1, drop = TRUE]
+        m[ valid , i] <- 1L
+      }#THEN
+
     }#THEN
 
-    if (is.matrix(sug[[i]])) {
-      valid = name_pack %in% sug[[i]][, 1, drop = TRUE]
-      m[ valid , i] <- 1L
+    if ("Suggests" %in% dependencies) {
+
+      if (is.matrix(sug[[i]])) {
+        valid = name_pack %in% sug[[i]][, 1, drop = TRUE]
+        m[ valid , i] <- 1L
+      }#THEN
+
     }#THEN
 
-    if (is.matrix(imp[[i]])) {
-      valid = name_pack %in% imp[[i]][, 1, drop = TRUE]
-      m[ valid , i] <- 1L
+    if ("Imports" %in% dependencies) {
+
+      if (is.matrix(imp[[i]])) {
+        valid = name_pack %in% imp[[i]][, 1, drop = TRUE]
+        m[ valid , i] <- 1L
+      }#THEN
+
     }#THEN
 
   }#FOR

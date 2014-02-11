@@ -1,0 +1,17 @@
+d8ac1ede068403ec86dd2c31740af8d7 *Changelog
+f786fb1f7511e0cd29659044a1cecc92 *DESCRIPTION
+ea45121978690e06e4f9e26f49e12498 *NAMESPACE
+d1f39a3d73fe77bac295b92dbbcee446 *R/analyze.R
+f09ff4c55523a0e12dd8f84aa8baaede *R/funcmap.R
+cc72e155fe33a21915380d1d4a3f45cd *R/init.R
+79616ae0a7974532e3b991579bac2801 *R/plot.R
+eddc0827265d5aeb2bea1ab050d9da4c *R/related.packages.R
+47f05ea3341f302748afaaeda5da73e1 *R/retrieve.R
+3c47a780c198267679a3143f09f6694a *man/centrality.Rd
+e5490f9de4cbbb1639fad3649e39754a *man/dependencies.Rd
+f005f470cb0c034fc6d6779b8c117606 *man/funcmap.Rd
+4f57f401ad0552f2d4c800dbd1083bbf *man/map.depends.Rd
+ee0c479c47bbf76c4f69f0426a391017 *man/packdep-package.Rd
+d95ca765c3fc56d2d3e6a1b5c7fa4368 *man/plot.packdep.centrality.Rd
+47b361ac117acdaf3c3aef1c1a6f6e6e *man/plot.packdep.dependencies.Rd
+ff770811d3201f4c56e30a60a9269dae *man/related.packages.Rd

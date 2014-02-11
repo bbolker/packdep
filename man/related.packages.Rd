@@ -8,14 +8,17 @@
 
 }
 \usage{
-  related.packages(x, order = 1, node)
+related.packages(x, node = NULL, order = 1, graphviz = FALSE)
 }
 \arguments{
   \item{x}{an object of class \code{igraph} returned by \code{map.depends}.}
+  \item{node}{a character string, the name of a package present in \code{x}.}
   \item{order}{a positive integer, giving the order of the neighbourhood 
     (i.e. the maximum distance from the package specified by the \code{node}
     parameter).}
-  \item{node}{a character string, the name of a package present in \code{x}.}
+  \item{graphviz}{a boolean value. If \code{TRUE} \pkg{Rgraphviz} is loaded
+    and used to produce the plot; if \code{FALSE} \pkg{igraph} plotting 
+    functions are used instead.}
 }
 \value{
 

@@ -8,13 +8,17 @@
 
 }
 \usage{
-  map.depends(repository = c("cran", "bioc"), 
-    contriburl = contrib.url(getOption("repos"))) 
+map.depends(repository = c("cran", "bioc"), 
+  contriburl = contrib.url(getOption("repos")),
+  dependencies = c("Imports", "Depends", "Suggests")) 
 }
 \arguments{
   \item{repository}{a character string, either \code{cran} (for a CRAN mirror)
     or \code{bioc} (for BioConductor).}
   \item{contriburl}{URL(s) of the contrib sections of the repositories.}
+  \item{dependencies}{a character vector, specifying which kind of dependencies
+    are to be evaluated. Possible values are one or more among \dQuote{Imports},
+    \dQuote{Depends} and \dQuote{Suggests}.}
 }
 \details{
 

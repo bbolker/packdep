@@ -10,11 +10,11 @@
 
 }
 \usage{
-  \method{plot}{packdep.dependencies}(x, type = c("dependencies", "reverse"), 
-    logscale = c("", "x", "y", "xy"), breaks = 10, freq = FALSE, 
-    xlab = NULL, ylab = NULL, ...)
-  \method{hist}{packdep.dependencies}(x, type = c("dependencies", "reverse"), 
-    xlab = NULL, ylab = "frequency", main = "", ...)
+\method{plot}{packdep.dependencies}(x, type = c("dependencies", "reverse"), 
+  logscale = c("", "x", "y", "xy"), breaks = 10, freq = FALSE, 
+  xlab = NULL, ylab = NULL, ...)
+\method{hist}{packdep.dependencies}(x, type = c("dependencies", "reverse"), 
+  xlab = NULL, ylab = "frequency", main = "", ...)
 }
 \arguments{
   \item{x}{an object of class \code{packdep.dependencies}.}

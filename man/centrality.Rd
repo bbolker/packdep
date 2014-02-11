@@ -7,7 +7,9 @@
 
 }
 \usage{
-  centrality(x, order.by = c("none", "betweenness", "closeness"))
+centrality(x, order.by = c("none", "betweenness", "incloseness",
+    "outcloseness", "indegree", "outdegree", "degree"), 
+    decreasing = TRUE)
 }
 \arguments{
   \item{x}{an object of class \code{igraph} returned by \code{map.depends}.}
@@ -15,6 +17,7 @@
     (rows in the returned data frame are not sorted), \code{betweenness}
     (rows are sorted in order of decreasing betweenness) or \code{closeness}
     (rows are sorted in order of decreasing closeness).}
+  \item{decreasing}{a boolean value. Should the sort order be increasing or decreasing?}
 }
 \value{
 

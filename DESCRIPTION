@@ -1,18 +1,20 @@
 Package: packdep
 Type: Package
 Title: Mapping dependencies among R packages
-Version: 0.2
-Date: 2009-07-26
-Depends: R (>= 2.9.0), igraph (>= 0.5.2), utils, tools
-Author: Radhakrishnan Nagarajan <rnagarajan@uams.edu> and Marco Scutari
-        <marco.scutari@stat.unipd.it>
-Maintainer: Marco Scutari <marco.scutari@stat.unipd.it>
-Description: packdep elucidates the dependencies between
-        user-contributed R packages and identifies key packages
-        according to social network analysis metrics.
+Version: 0.3.1
+Date: 2014-02-11
+Depends: R (>= 2.9.0), igraph (>= 0.5.2), utils
+Suggests: Rgraphviz (>= 1.20.3)
+Author: Radhakrishnan Nagarajan <rnagarajan@uky.edu> and Marco Scutari <marco.scutari@gmail.com>
+Maintainer: Marco Scutari <marco.scutari@gmail.com>
+Description: packdep elucidates the dependencies 
+  between user-contributed R packages and 
+  identifies key packages according to social
+  network analysis metrics.
 License: GPL (>= 2)
 LazyLoad: yes
 LazyData: yes
-Packaged: 2009-07-26 15:57:33 UTC; fizban
+Packaged: 2014-02-12 11:32:23 UTC; fizban
+NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2009-07-26 17:51:33
+Date/Publication: 2014-02-12 13:07:47

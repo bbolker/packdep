@@ -7,7 +7,8 @@
 
 }
 \usage{
-  dependencies(x, order.by = c("none", "dependencies", "reverse"))
+dependencies(x, order.by = c("none", "dependencies", "reverse"), 
+    decreasing = TRUE)
 }
 \arguments{
   \item{x}{an object of class \code{igraph} returned by \code{map.depends}.}
@@ -15,6 +16,7 @@
     (rows in the returned data frame are not sorted), \code{dependencies}
     (rows are sorted in order of decreasing number of dependencies) or \code{reverse}
     (rows are sorted in order of decreasing number of reverse dependencies).}
+  \item{decreasing}{a boolean value. Should the sort order be increasing or decreasing?}
 }
 \details{
 
