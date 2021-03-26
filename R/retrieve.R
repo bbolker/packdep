@@ -35,11 +35,11 @@ map.depends = function(repository = c("cran", "bioc"), contriburl = contrib.url(
 
   # extract Depends, Import and Suggests for each package.
   if ("Imports" %in% dependencies)
-    imp = package.dependencies(a, depLevel = "Imports")
+    imp = package_dependencies(a, which = "Imports")
   if ("Suggests" %in% dependencies)
-    sug = package.dependencies(a, depLevel = "Suggests")
+    sug = package_dependencies(a, which = "Suggests")
   if ("Depends" %in% dependencies)
-    dep = package.dependencies(a, depLevel = "Depends")
+    dep = package_dependencies(a, which = "Depends")
 
   # store the names of the packages.
   name_pack = rownames(a)
